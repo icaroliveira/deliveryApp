@@ -11,18 +11,25 @@ struct NavigationBar: View {
 @State private var notificacao = false
     var body: some View {
         HStack{
-            Button("Manaus, AM") { /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/ }
+            Spacer()
+            Button("Manaus, AM") { /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            }
+            .font(.subheadline)
+            .fontWeight(.semibold)
+            Spacer()
             Group{
                 if notificacao{
                     Image(systemName: "bell")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
+                        .foregroundColor(.red)
                 } else {
                     Image(systemName: "bell.badge")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
+                        .foregroundColor(.red)
                 }
             }
             .rotationEffect(.degrees(notificacao ? 0 : -360))
@@ -34,6 +41,8 @@ struct NavigationBar: View {
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBar()
+            .previewLayout(.sizeThatFits)
+            .padding()
     }
 }
 
