@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		206B25492A4DA8A6004B661B /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B25482A4DA8A6004B661B /* OrderType.swift */; };
+		206B254B2A4DA919004B661B /* DataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B254A2A4DA919004B661B /* DataSourceMock.swift */; };
 		2085E6912A4C1D5B00B624B5 /* deliveryAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085E6902A4C1D5B00B624B5 /* deliveryAppApp.swift */; };
 		2085E6932A4C1D5B00B624B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085E6922A4C1D5B00B624B5 /* ContentView.swift */; };
 		2085E6952A4C1D5C00B624B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2085E6942A4C1D5C00B624B5 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		206B25482A4DA8A6004B661B /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
+		206B254A2A4DA919004B661B /* DataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceMock.swift; sourceTree = "<group>"; };
 		2085E68D2A4C1D5B00B624B5 /* deliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2085E6902A4C1D5B00B624B5 /* deliveryAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deliveryAppApp.swift; sourceTree = "<group>"; };
 		2085E6922A4C1D5B00B624B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +40,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		206B25472A4DA88C004B661B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				206B25482A4DA8A6004B661B /* OrderType.swift */,
+				206B254A2A4DA919004B661B /* DataSourceMock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2085E6842A4C1D5B00B624B5 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +69,7 @@
 		2085E68F2A4C1D5B00B624B5 /* deliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				206B25472A4DA88C004B661B /* Models */,
 				2085E69F2A4C25F900B624B5 /* App */,
 				2085E69E2A4C25E000B624B5 /* NavigationBar */,
 				2085E6A22A4C470800B624B5 /* GridView */,
@@ -167,7 +181,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206B25492A4DA8A6004B661B /* OrderType.swift in Sources */,
 				2085E6932A4C1D5B00B624B5 /* ContentView.swift in Sources */,
+				206B254B2A4DA919004B661B /* DataSourceMock.swift in Sources */,
 				2085E6A42A4C476700B624B5 /* OrderTypeGridView.swift in Sources */,
 				2085E6912A4C1D5B00B624B5 /* deliveryAppApp.swift in Sources */,
 				2085E6A12A4C263200B624B5 /* NavigationBar.swift in Sources */,
