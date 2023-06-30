@@ -10,12 +10,13 @@ import SwiftUI
 struct NavigationBar: View {
 @State private var notificacao = false
     var body: some View {
-        HStack{
+        HStack(alignment: .center){
             Spacer()
             Button("Manaus, AM") { /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
             }
             .font(.subheadline)
             .fontWeight(.semibold)
+            
             Spacer()
             Group{
                 if notificacao{
