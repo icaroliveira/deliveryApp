@@ -9,17 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            NavigationBar()
-                .padding(.horizontal,15)
-            
-            ScrollView(.vertical, showsIndicators: false){
-                VStack(spacing: 20){
-                    OrderTypeGridView()
-                    CarroselTabView()
+        
+        ZStack{
+            AngularGradient(gradient: Gradient(colors: [Color(red: 0.9, green: 0.6, blue: 0.2), Color(red: 0.8, green: 0.4, blue: 0.1)]), center: .center, angle: .degrees(45))
+                        .edgesIgnoringSafeArea(.all)
+            VStack {
+                NavigationBar()
+                    .padding(.horizontal,15)
+                
+                ScrollView(.vertical, showsIndicators: false){
+                    VStack(spacing: 20){
+                        OrderTypeGridView()
+                        CarroselTabView()
+                        StoreContainerView()
+                    }
                 }
             }
+            
         }
+        
     }
 }
 

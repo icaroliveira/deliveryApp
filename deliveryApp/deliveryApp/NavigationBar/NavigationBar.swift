@@ -16,6 +16,7 @@ struct NavigationBar: View {
             }
             .font(.subheadline)
             .fontWeight(.semibold)
+            .foregroundColor(.black)
             
             Spacer()
             Group{
@@ -24,13 +25,13 @@ struct NavigationBar: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
-                        .foregroundColor(.red)
+                        .foregroundColor(.black)
                 } else {
                     Image(systemName: "bell.badge")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)
-                        .foregroundColor(.red)
+                        .foregroundColor(.black)
                 }
             }
             .rotationEffect(.degrees(notificacao ? 0 : -360))
