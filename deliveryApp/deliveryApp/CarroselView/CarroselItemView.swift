@@ -13,7 +13,7 @@ struct CarroselItemView: View {
         Image(order.image)
             .resizable()
             .scaledToFit()
-            
+        
     }
 }
 

@@ -10,23 +10,23 @@ import SwiftUI
 struct StoreItemView: View {
     let order: OrderType
     var body: some View {
-            HStack{
-                Image(order.image)
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(25)
-                    .frame(width: 50, height: 50)
-                VStack{
-                    Text(order.name)
-                        .font(.subheadline.bold())
-                        .foregroundColor(.white)
-                    
+        HStack{
+            Image(order.image)
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(25)
+                .frame(width: 50, height: 50)
+            VStack{
+                Text(order.name)
+                    .font(.subheadline.bold())
+                    .foregroundColor(.white)
+                
             }
-                Spacer()
+            Spacer()
         }
-            .onTapGesture {
-                print("Clicou em \(order.name)")
-            }
+        .onTapGesture {
+            print("Clicou em \(order.name)")
+        }
     }
 }
 

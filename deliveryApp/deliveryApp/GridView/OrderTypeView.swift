@@ -20,7 +20,7 @@ struct OrderTypeView: View {
             Text(orderType.name)
                 .font(.system(size: 10).bold())
                 .foregroundColor(.white)
-                
+            
         }
         .frame(width: 70, height: 100)
     }

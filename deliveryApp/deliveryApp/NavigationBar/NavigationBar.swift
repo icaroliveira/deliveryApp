@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NavigationBar: View {
-@State private var notificacao = false
+    @State private var notificacao = false
     var body: some View {
         HStack(alignment: .center){
             Spacer()
