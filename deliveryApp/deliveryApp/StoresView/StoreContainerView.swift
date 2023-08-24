@@ -18,7 +18,7 @@ struct StoreContainerView: View {
                     NavigationLink{
                         StoreDetailView(store: mock)
                     } label: {
-                        StoreItemView(order: mock)
+                        StoreItemView(store: mock)
                     }
                 }
             }
