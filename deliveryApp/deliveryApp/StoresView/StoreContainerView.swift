@@ -15,17 +15,18 @@ struct StoreContainerView: View {
                 .font(.title2.bold())
             VStack(alignment: .leading, spacing: 30){
                 ForEach(storesMock){ mock in
-                    StoreItemView(order: mock)
-                    
+                    NavigationLink{
+                        StoreDetailView(store: mock)
+                    } label: {
+                        StoreItemView(order: mock)
+                    }
                 }
-                
             }
-            
+            .foregroundColor(.black)
         }
         .padding(20)
     }
 }
-
 struct StoreContainerView_Previews: PreviewProvider {
     static var previews: some View {
         StoreContainerView()

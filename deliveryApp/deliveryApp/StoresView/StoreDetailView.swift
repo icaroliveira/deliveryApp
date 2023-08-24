@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct StoreDetailView: View {
+    
+    let store: OrderType
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(store.name)
     }
 }
 
 struct StoreDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        StoreDetailView()
+        StoreDetailView(store: storesMock[0])
     }
 }
