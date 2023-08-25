@@ -39,6 +39,7 @@ struct StoreDetailView: View {
                         
                         ForEach(1...store.stars, id:\.self) { _ in
                             Image(systemName:"star.fill" )
+                                
                                 .foregroundColor(.yellow)
                                 .font(.caption)
                         }
@@ -53,7 +54,7 @@ struct StoreDetailView: View {
                     ForEach(store.products) { product in
                         
                         NavigationLink {
-                            ProductDetailView()
+                            ProductDetailView(product: product)
                         } label: {
                             HStack(spacing: 8){
                                 VStack(alignment: .leading, spacing: 8){
@@ -61,6 +62,7 @@ struct StoreDetailView: View {
                                         .bold()
                                     Text(product.description)
                                         .foregroundColor(.black.opacity(0.5))
+                                        .multilineTextAlignment(.leading)
                                     Text(product.formattedPrice)
                                 }
                                 
@@ -74,6 +76,7 @@ struct StoreDetailView: View {
                                     .shadow(color: .black.opacity(0.3), radius: 20, x:6, y:8)
                             }
                             .padding()
+                            .foregroundColor(.black)
                         }
                     }
                 }
