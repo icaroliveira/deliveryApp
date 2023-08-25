@@ -16,8 +16,6 @@ struct StoreDetailView: View {
     var body: some View {
         ScrollView {
             ZStack {
-                AngularGradient(gradient: Gradient(colors: [Color(red: 0.9, green: 0.6, blue: 0.2), Color(red: 0.8, green: 0.4, blue: 0.1)]), center: .center, angle: .degrees(45))
-                    
                 VStack(alignment: .leading){
                     Image(store.headerImage)
                         .resizable()
@@ -53,45 +51,50 @@ struct StoreDetailView: View {
                         .bold()
                         .padding()
                     ForEach(store.products) { product in
-                        HStack(spacing: 8){
-                            VStack(alignment: .leading, spacing: 8){
-                                Text(product.name)
-                                    .bold()
-                                Text(product.description)
-                                    .foregroundColor(.black.opacity(0.5))
-                                Text(product.formattedPrice)
+                        
+                        NavigationLink {
+                            ProductDetailView()
+                        } label: {
+                            HStack(spacing: 8){
+                                VStack(alignment: .leading, spacing: 8){
+                                    Text(product.name)
+                                        .bold()
+                                    Text(product.description)
+                                        .foregroundColor(.black.opacity(0.5))
+                                    Text(product.formattedPrice)
+                                }
+                                
+                                Spacer()
+                                
+                                Image(product.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(12)
+                                    .frame(width: 120, height: 120)
+                                    .shadow(color: .black.opacity(0.3), radius: 20, x:6, y:8)
                             }
-                            
-                            Spacer()
-                            
-                            Image(product.image)
-                                .resizable()
-                                .scaledToFit()
-                                .cornerRadius(12)
-                                .frame(width: 120, height: 120)
-                                .shadow(color: .black.opacity(0.3), radius: 20, x:6, y:8)
+                            .padding()
                         }
-                        .padding()
                     }
                 }
                 .navigationTitle(store.name)
-            .navigationBarTitleDisplayMode(.large)
-            .navigationBarBackButtonHidden()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        HStack(spacing: 4){
-                            Image(systemName: "cart")
+                .navigationBarTitleDisplayMode(.large)
+                .navigationBarBackButtonHidden()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            HStack(spacing: 4){
+                                Image(systemName: "cart")
                                 
-                            Text("Lojas")
+                                Text("Lojas")
+                            }
+                            .foregroundColor(Color("ColorRed"))
                         }
-                        .foregroundColor(Color("ColorRed"))
+                        
                     }
-
                 }
-        }
             }
         }
     }
