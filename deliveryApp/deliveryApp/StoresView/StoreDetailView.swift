@@ -15,80 +15,84 @@ struct StoreDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading){
-                Image(store.headerImage)
-                    .resizable()
-                    .scaledToFit()
-                HStack{
-                    Text(store.name)
-                        .font(.title)
-                        .bold()
+            ZStack {
+                AngularGradient(gradient: Gradient(colors: [Color(red: 0.9, green: 0.6, blue: 0.2), Color(red: 0.8, green: 0.4, blue: 0.1)]), center: .center, angle: .degrees(45))
                     
-                    Spacer()
-                    
-                    Image(store.logoImage)
-                }
-                .padding(.vertical,8)
-                .padding(.horizontal)
-                
-                HStack{
-                    Text(store.location)
-                    
-                    Spacer()
-                    
-                    ForEach(1...store.stars, id:\.self) { _ in
-                        Image(systemName:"star.fill" )
-                            .foregroundColor(.yellow)
-                            .font(.caption)
-                    }
-                }
-                .padding(.vertical, 8)
-                .padding(.horizontal)
-                
-                Text("Produtos")
-                    .font(.title2)
-                    .bold()
-                    .padding()
-                ForEach(store.products) { product in
-                    HStack(spacing: 8){
-                        VStack(alignment: .leading, spacing: 8){
-                            Text(product.name)
-                                .bold()
-                            Text(product.description)
-                                .foregroundColor(.black.opacity(0.5))
-                            Text(product.formattedPrice)
-                        }
+                VStack(alignment: .leading){
+                    Image(store.headerImage)
+                        .resizable()
+                        .scaledToFit()
+                    HStack{
+                        Text(store.name)
+                            .font(.title)
+                            .bold()
                         
                         Spacer()
                         
-                        Image(product.image)
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(12)
-                            .frame(width: 120, height: 120)
-                            .shadow(color: .black.opacity(0.3), radius: 20, x:6, y:8)
+                        Image(store.logoImage)
                     }
-                    .padding()
-                }
-            }
-            .navigationTitle(store.name)
-        .navigationBarTitleDisplayMode(.large)
-        .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    HStack(spacing: 4){
-                        Image(systemName: "cart")
+                    .padding(.vertical,8)
+                    .padding(.horizontal)
+                    
+                    HStack{
+                        Text(store.location)
+                        
+                        Spacer()
+                        
+                        ForEach(1...store.stars, id:\.self) { _ in
+                            Image(systemName:"star.fill" )
+                                .foregroundColor(.yellow)
+                                .font(.caption)
+                        }
+                    }
+                    .padding(.vertical, 8)
+                    .padding(.horizontal)
+                    
+                    Text("Produtos")
+                        .font(.title2)
+                        .bold()
+                        .padding()
+                    ForEach(store.products) { product in
+                        HStack(spacing: 8){
+                            VStack(alignment: .leading, spacing: 8){
+                                Text(product.name)
+                                    .bold()
+                                Text(product.description)
+                                    .foregroundColor(.black.opacity(0.5))
+                                Text(product.formattedPrice)
+                            }
                             
-                        Text("Lojas")
+                            Spacer()
+                            
+                            Image(product.image)
+                                .resizable()
+                                .scaledToFit()
+                                .cornerRadius(12)
+                                .frame(width: 120, height: 120)
+                                .shadow(color: .black.opacity(0.3), radius: 20, x:6, y:8)
+                        }
+                        .padding()
                     }
-                    .foregroundColor(Color("ColorRed"))
                 }
+                .navigationTitle(store.name)
+            .navigationBarTitleDisplayMode(.large)
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        HStack(spacing: 4){
+                            Image(systemName: "cart")
+                                
+                            Text("Lojas")
+                        }
+                        .foregroundColor(Color("ColorRed"))
+                    }
 
-            }
+                }
         }
+            }
         }
     }
 }
