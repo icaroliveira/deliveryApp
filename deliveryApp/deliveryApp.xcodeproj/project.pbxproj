@@ -126,7 +126,6 @@
 		2085E68F2A4C1D5B00B624B5 /* deliveryApp */ = {
 			isa = PBXGroup;
 			children = (
-				202AA0702A983BAF003D3C3B /* ProductView */,
 				202AA06D2A982B4F003D3C3B /* Extension */,
 				2085E6962A4C1D5C00B624B5 /* Preview Content */,
 				206B25472A4DA88C004B661B /* Models */,
@@ -135,6 +134,7 @@
 				2085E6A22A4C470800B624B5 /* GridView */,
 				2029FE082A4F281200C3A91C /* CarroselView */,
 				2029FE0D2A4F3A4D00C3A91C /* StoresView */,
+				202AA0702A983BAF003D3C3B /* ProductView */,
 			);
 			path = deliveryApp;
 			sourceTree = "<group>";
