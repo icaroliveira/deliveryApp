@@ -10,6 +10,13 @@ import SwiftUI
 struct StoreContainerView: View {
     let title = "Lojas"
     @State private var ratingFilter = 0
+    
+    var filteredStores: [StoreType]{
+        return storesMock.filter { store in
+            store.stars >= ratingFilter
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading){
             
@@ -36,7 +43,8 @@ struct StoreContainerView: View {
             }
             
             VStack(alignment: .leading, spacing: 30){
-                ForEach(storesMock){ mock in
+                
+                ForEach(filteredStores){ mock in
                     NavigationLink{
                         StoreDetailView(store: mock)
                     } label: {
