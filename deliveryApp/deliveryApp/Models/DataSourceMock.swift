@@ -84,7 +84,7 @@ let storesMock: [StoreType] = [
         headerImage: "acai-panda-header",
         location: "Avenida Quinta, 753, São Paulo, SP",
         stars: 4,
-        products: [
+        products: [	
             ProductType(id: 21, name: "Açaí Pequeno", description: "Açaí na tigela de 300ml com granola e banana", image: "small_acai", price: 8.99),
             ProductType(id: 22, name: "Açaí Médio", description: "Açaí na tigela de 500ml com granola, banana e leite condensado", image: "medium_acai", price: 10.99),
             ProductType(id: 23, name: "Açaí Grande", description: "Açaí na tigela de 700ml com granola, banana, leite condensado e morangos", image: "large_acai", price: 13.99),

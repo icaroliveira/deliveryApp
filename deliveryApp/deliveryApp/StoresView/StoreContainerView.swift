@@ -9,10 +9,32 @@ import SwiftUI
 
 struct StoreContainerView: View {
     let title = "Lojas"
+    @State private var ratingFilter = 0
     var body: some View {
         VStack(alignment: .leading){
-            Text(title)
-                .font(.title2.bold())
+            
+            HStack{
+                Text(title)
+                    .font(.title2.bold())
+                Spacer()
+                Menu("Filtrar"){
+                    
+                    ForEach(1...5, id: \.self){ rating in
+                        Button{
+                            ratingFilter = rating
+                        }label: {
+                            if rating > 1 {
+                                Text("\(rating) estrelas ou mais")
+                            } else {
+                                Text("\(rating) estrela ou mais")
+                            }
+                        }
+                    }
+                }
+                .foregroundColor(.black)
+                .bold()
+            }
+            
             VStack(alignment: .leading, spacing: 30){
                 ForEach(storesMock){ mock in
                     NavigationLink{
